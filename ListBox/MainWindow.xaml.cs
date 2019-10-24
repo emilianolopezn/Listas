@@ -38,10 +38,41 @@ namespace ListBox
 
         private void BtnNuevoColor_Click(object sender, RoutedEventArgs e)
         {
-            Colores.Add(new Color(
-                txtColor.Text,txtHex.Text,txtRGB.Text));
+            Colores.Add(
+                new Color(txtColor.Text,
+                txtHex.Text,
+                txtRGB.Text)
+                );
             txtColor.Text = "";
-            
+            txtHex.Text = "";
+            txtRGB.Text = "";
+
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstColores.SelectedIndex != -1)
+            {
+                Colores.RemoveAt(lstColores.SelectedIndex);
+            }
+        }
+
+        private void LstColores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txtColor_Editar.Text =
+                Colores[lstColores.SelectedIndex].Nombre;
+            txtHex_Editar.Text =
+                Colores[lstColores.SelectedIndex].Hexadecimal;
+            txtRGB_Editar.Text =
+                Colores[lstColores.SelectedIndex].RGB;
+        }
+
+        private void BtnActualizarColor_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstColores.SelectedIndex != -1)
+            {
+               
+            }
         }
     }
 }
