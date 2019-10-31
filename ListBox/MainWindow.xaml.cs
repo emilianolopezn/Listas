@@ -81,6 +81,7 @@ namespace ListBox
 
                 Colores[lstColores.SelectedIndex].RGB = txtRGB_Editar.Text;
             }
+            lstColores.Items.Refresh();
          
         }
     }
